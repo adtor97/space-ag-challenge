@@ -26,14 +26,16 @@ Si tienes alguna duda o pregunta escribe a adolfo@spaceag.co
 
 __Mucha suerte :)__
 
-##Respuestas
+## Respuestas
 
 1. Obtención de NVDI
+
 La obtención del NVDI se da en el Notebook data_wrangling. Este tiene dos outputs principalmente:
 - df_data.csv: Tabla con el detalle de cada lote y sus NDVIs. Por cada fecha del excel SentinelHubImage-available_dates.xlsx se genera una columna con el detalle del NVDI y otra con el promedio.
 - images: Imágenes en .png del NDVI por cada lote y por cada fecha. Estas se encuentran en la ruta "outputs\images" y tienen como nombre el formato "fecha_id de lote"
 
 2. Análisis de resultados
+
 El análisis de los resultados se da en el Notebook data_analysis. Outputs:
 - correlation_analysis.csv: gráfico de correlación entre variables estadísticas del NDVI y la producción de los lotes
 - df_corr.png: correlación entre variables estadísticas del NDVI y la producción de los lotes
@@ -45,9 +47,10 @@ El análisis de los resultados se da en el Notebook data_analysis. Outputs:
 - moving_average: gráfico que muestra el promedio móvil (cada 6 periodos) del NDVI por serie de tiempo agrupada
 - df_monthly: dataset mensual con resultados de decomposición y promedio móvil
 
-#Propuestas de mejora:
+# Propuestas de mejora:
 
 Data wrangling
+
 - La obtención de NDVI puede ser más rápida si se utiliza un rango de tiempo en el parámetro "time" del request con las fechas mínimas y máximas del excel SentinelHubImage-available_dates.xlsx.
 Luego habría que quedarse solo con las imágenes que se hayan dado en las fechas especificadas en el mismo archivo.
 
@@ -59,6 +62,7 @@ de una observación si muy pocos píxeles pasan el 0.2. Otra variables podría s
 bajos son debido a que el campo no contaba con vegetación o si tiene que ver con la presencia de nubes.
 
 Data analysis
+
 - Para agrupar los lotes y analizar las series de tiempo se podrían clusterizar los lotes y no solo dividirlos según el nivel promedio de NDVI para encontrar más series de tiempo con distintos patrones.
 En este ejercicio podría no ser un cambio muy significativo, pero si se agregan lotes de otras regiones, por ejemplo, puede ser muy útil.
 
